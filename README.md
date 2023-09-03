@@ -1,6 +1,5 @@
 # Setup
 
-# cross-notes
 
 ## oh my posh terminal theming
 
@@ -30,11 +29,11 @@ find all available themes by entering ``` ls /home/linuxbrew/.linuxbrew/Cellar/o
 
 https://learn.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup#customize-your-wsl-prompt-with-oh-my-posh
 
-## Initializing WSL desktop GUI
+# Initializing WSL desktop GU
 
 
 
-# WSL 2 GNOME Desktop
+## WSL 2 GNOME Desktop
 
 **NOTE:** If you want the ultimate Linux desktop experience, I highly recommend installing Linux as your main OS. I no longer use Windows (except in a VM) so I will not be maintaining this guide anymore.
 

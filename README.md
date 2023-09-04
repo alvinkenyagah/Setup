@@ -165,3 +165,16 @@ Open remote desktop and paste `localhost:3390`
   </li>
     
   </ul>
+
+## Configuring github ssh
+
+`cd ~/.ssh && ls`   //Check for existing keys
+
+`ssh-keygen -o -t rsa -C "your-email@mail.com"`  //Create ssh key
+
+`cat ~/.ssh/id_rsa.pub`   //view public key
+
+https://github.com/settings/keys    //Add your public key to GitHub
+
+`eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa &>/dev/null`  (keeps asking for key)
+

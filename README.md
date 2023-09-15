@@ -178,6 +178,9 @@ https://github.com/settings/keys    //Add your public key to GitHub
 
 `eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa &>/dev/null`  (keeps asking for key)
 
+### Remove user linux password
+`sudo passwd --delete <username>`
+
 ## NODE TUNNEL
 
 `npm install -g localtunnel`

@@ -1,26 +1,44 @@
 ## Android tips
-The following ADB command can be used to set a custom battery percent level to trigger battery save on Android 7.1:
+
+The following ADB command will trigger battery saver on at your specified set battery percentage:
 
 ```
-adb shell dumpsys battery set level <battery_level>
+adb shell settings put global low_power_trigger_level <percentage>
 ```
 
-Where `<battery_level>` is the desired battery level at which battery saver mode should be triggered. For example, to trigger battery saver mode at 50% battery, you would use the following command:
+Replace `<percentage>` with the battery percentage at which you want battery saver to be triggered. For example, to trigger battery saver at 20%, you would use the following command:
 
 ```
-adb shell dumpsys battery set level 50
+adb shell settings put global low_power_trigger_level 20
 ```
 
-**Note:** You must have a rooted device in order to use this command.
-
-To use this command, you will need to connect your device to your computer using a USB cable and enable ADB debugging. Once ADB debugging is enabled, you can open a terminal window on your computer and navigate to the directory where your ADB platform-tools are installed.
-
-Then, you can use the above command to set the desired battery level for battery saver mode. For example, to trigger battery saver mode at 50% battery, you would use the following command:
+You can verify that the battery saver trigger level has been set correctly by using the following command:
 
 ```
-adb shell dumpsys battery set level 50
+adb shell settings get global low_power_trigger_level
 ```
 
-Once you have set the desired battery level, you can disconnect your device from your computer. Battery saver mode will now be triggered at the specified battery level.
+This will return the current battery saver trigger level.
 
-Please note that setting a custom battery level for battery saver mode may have an impact on your device's performance. It is important to monitor your device's battery life and performance after setting a custom battery level to ensure that it is working as expected.
+**Note:** This command requires root access on your device.
+
+Here is an example of how to use the command:
+
+```
+# Connect your device to your computer via USB.
+# Enable ADB debugging on your device.
+# Open a terminal window on your computer.
+# Navigate to the directory where the ADB platform-tools are located.
+# Run the following command to trigger battery saver at 20%:
+adb shell settings put global low_power_trigger_level 20
+# Verify that the battery saver trigger level has been set correctly:
+adb shell settings get global low_power_trigger_level
+```
+
+This will return the following output:
+
+```
+20
+```
+
+This confirms that the battery saver trigger level has been set to 20%.
